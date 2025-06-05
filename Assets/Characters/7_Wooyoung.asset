@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5f1a83880007b45b17a9dafb80f1f4, type: 3}
+  m_Name: 7_Wooyoung
+  m_EditorClassIdentifier: 
+  characterName: Wooyoung
+  portrait: {fileID: 6018934763227769333, guid: 618b34cc34d2e6a479bc6b07fe8127f7, type: 3}
+  animatorController: {fileID: 9100000, guid: 6212dca71b9e9bb46b089c84bf4a9b9a, type: 2}
+  spawnPosition: {x: 0, y: 0}
+  description: The loudest

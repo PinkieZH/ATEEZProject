@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5f1a83880007b45b17a9dafb80f1f4, type: 3}
+  m_Name: 3_Yunho
+  m_EditorClassIdentifier: 
+  characterName: Yunho
+  portrait: {fileID: -3544839565340548629, guid: 9a781438de9efad468312ea201df8611, type: 3}
+  animatorController: {fileID: 9100000, guid: abbbcffb47f5de04c8f80107cdf0a242, type: 2}
+  spawnPosition: {x: 0, y: 0}
+  description: Mingi's bestfriend

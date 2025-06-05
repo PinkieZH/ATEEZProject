@@ -4,7 +4,8 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     public string characterName;
-    public Sprite characterSprite;
+    public Sprite portrait;
     public RuntimeAnimatorController animatorController;
     public Vector2 spawnPosition;
+    public string description;
 }

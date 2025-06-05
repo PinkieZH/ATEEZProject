@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5f1a83880007b45b17a9dafb80f1f4, type: 3}
+  m_Name: 6_Mingi
+  m_EditorClassIdentifier: 
+  characterName: Mingi
+  portrait: {fileID: 8652158116859346582, guid: bf7f8e1da565ed54dafd48745be72193, type: 3}
+  animatorController: {fileID: 9100000, guid: addce08f03f0e2146a530b6c1acef5aa, type: 2}
+  spawnPosition: {x: 0, y: 0}
+  description: The most anxious one
