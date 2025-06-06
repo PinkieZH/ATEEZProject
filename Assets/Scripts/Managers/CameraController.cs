@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     public float maxY = 10f;
 
     [Header("Advanced Settings")]
-    public float snapDistance = 0.05f; // Distance en dessous de laquelle la caméra se positionne exactement sur la cible
+    public float snapDistance = 1f; // Distance en dessous de laquelle la caméra se positionne exactement sur la cible
 
     private void LateUpdate()
     {
@@ -60,5 +60,22 @@ public class CameraController : MonoBehaviour
         this.maxX = maxX;
         this.minY = minY;
         this.maxY = maxY;
+    }
+
+    public void TeleportToTarget()
+    {
+        if (!target) return;
+
+        Vector3 desiredPosition = target.position + offset;
+
+        // Appliquer les limites si activées
+        if (useBoundaries)
+        {
+            desiredPosition.x = Mathf.Clamp(desiredPosition.x, minX, maxX);
+            desiredPosition.y = Mathf.Clamp(desiredPosition.y, minY, maxY);
+        }
+
+        // Téléporter instantanément
+        transform.position = desiredPosition;
     }
 }

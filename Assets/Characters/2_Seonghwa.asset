@@ -15,5 +15,12 @@ MonoBehaviour:
   characterName: Seonghwa
   portrait: {fileID: 302649929230112789, guid: 27e95d1ec85a11e44a4b9519df94d83c, type: 3}
   animatorController: {fileID: 9100000, guid: 896896dc45cdcdf4a91a4ab2d3888c31, type: 2}
-  spawnPosition: {x: 0, y: 0}
+  spawnPosition: {x: -29.96, y: 11.7}
   description: The captain's right-hand man
+  itemsSpeciauxRequis: 3
+  finText: 'My memory came back..!
+
+    It''s time to go
+
+    I''m gonna be late
+    to the meet-up'

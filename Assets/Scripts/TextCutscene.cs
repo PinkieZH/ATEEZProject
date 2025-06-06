@@ -8,13 +8,15 @@ public class TextCutscene : MonoBehaviour
 {
     public TextMeshProUGUI cutsceneText;
     public string[] lines;
-    public float typingSpeed = 0.05f;
+    public float typingSpeed = 0.03f;
     private int index = 0;
 
     void Start()
     {
         StartCoroutine(TypeLine());
     }
+
+
 
     IEnumerator TypeLine()
     {
@@ -51,7 +53,7 @@ public class TextCutscene : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("CharacterSelect");
+            SceneManager.LoadScene("CharacterSelection");
         }
     }
 }

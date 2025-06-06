@@ -470,6 +470,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &851192797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 851192799}
+  - component: {fileID: 851192798}
+  m_Layer: 0
+  m_Name: CharaSelectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &851192798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851192797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6755bb9086abaeb41946a27a9996feee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 11400000, guid: 498e409110d83894a82815d328ac79ab, type: 2}
+  - {fileID: 11400000, guid: 9cfda1f8a4ed25d4e9576ba73c68c29f, type: 2}
+  - {fileID: 11400000, guid: 24bb88940c8bbb3479e58929a8f9c583, type: 2}
+  - {fileID: 11400000, guid: 2c7ee6fc8fe107b409890432caad782f, type: 2}
+  - {fileID: 11400000, guid: 69a7407210fe5b04e9a509ae0fed8c73, type: 2}
+  - {fileID: 11400000, guid: 5c02090fcd8bef34989602b902076c74, type: 2}
+  - {fileID: 11400000, guid: 45b592ea03c775749ae5e67efae6d18d, type: 2}
+  - {fileID: 11400000, guid: fcac5beef1cfdb54ab71d2b42ddce3be, type: 2}
+  selectedCharacter: {fileID: 0}
+  characterButtonPrefab: {fileID: 3663064254713822791, guid: 3aaf1a8ed9c3eb843b9113b3f9dc91ac, type: 3}
+  gridPanel: {fileID: 1276053836}
+  nameText: {fileID: 184150291}
+  descriptionText: {fileID: 134155428}
+  portraitImage: {fileID: 893051462431393418, guid: 3aaf1a8ed9c3eb843b9113b3f9dc91ac, type: 3}
+  startButton: {fileID: 1946921023}
+  infoPanel: {fileID: 2140863236}
+  debugMode: 1
+--- !u!4 &851192799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851192797}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.7316885, y: 9.150729, z: -276.33768}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &958377567
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,9 +1018,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687926778}
-  - component: {fileID: 1687926779}
+  - component: {fileID: 1687926780}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -979,7 +1041,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1687926779
+--- !u!114 &1687926780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -988,26 +1050,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1687926776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6755bb9086abaeb41946a27a9996feee, type: 3}
+  m_Script: {fileID: 11500000, guid: 081d3565e7b3f3a4ba764476b8f1e710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
-  - {fileID: 11400000, guid: 498e409110d83894a82815d328ac79ab, type: 2}
-  - {fileID: 11400000, guid: 9cfda1f8a4ed25d4e9576ba73c68c29f, type: 2}
-  - {fileID: 11400000, guid: 24bb88940c8bbb3479e58929a8f9c583, type: 2}
-  - {fileID: 11400000, guid: 2c7ee6fc8fe107b409890432caad782f, type: 2}
-  - {fileID: 11400000, guid: 69a7407210fe5b04e9a509ae0fed8c73, type: 2}
-  - {fileID: 11400000, guid: 5c02090fcd8bef34989602b902076c74, type: 2}
-  - {fileID: 11400000, guid: 45b592ea03c775749ae5e67efae6d18d, type: 2}
-  - {fileID: 11400000, guid: fcac5beef1cfdb54ab71d2b42ddce3be, type: 2}
   selectedCharacter: {fileID: 0}
-  characterButtonPrefab: {fileID: 3663064254713822791, guid: 3aaf1a8ed9c3eb843b9113b3f9dc91ac, type: 3}
-  gridPanel: {fileID: 1276053836}
-  nameText: {fileID: 184150291}
-  descriptionText: {fileID: 134155428}
-  portraitImage: {fileID: 893051462431393418, guid: 3aaf1a8ed9c3eb843b9113b3f9dc91ac, type: 3}
-  startButton: {fileID: 1946921023}
-  infoPanel: {fileID: 2140863236}
 --- !u!1 &1946921022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1117,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687926779}
+      - m_Target: {fileID: 851192798}
         m_TargetAssemblyTypeName: CharacterSelectionManager, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -1226,3 +1272,4 @@ SceneRoots:
   - {fileID: 1680945780}
   - {fileID: 214655241}
   - {fileID: 1687926778}
+  - {fileID: 851192799}
