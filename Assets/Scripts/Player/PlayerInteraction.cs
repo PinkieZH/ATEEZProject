@@ -51,7 +51,7 @@ public class PlayerInteraction : InputHandler
     {
         if (currentInteractable != null)
         {
-            currentInteractable.Talk();
+            currentInteractable.Read();
         }
     }
 

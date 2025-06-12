@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Yeosang
   portrait: {fileID: 3299331731555521892, guid: 864a2c8777c98314bb7d601a6a72cf2e, type: 3}
   animatorController: {fileID: 9100000, guid: 6784dd919f80fcc408fc85d037cc3486, type: 2}
-  spawnPosition: {x: 0, y: 0}
+  spawnPosition: {x: 2.46, y: 11.98}
   description: The bestfriend of Wooyoung
   itemsSpeciauxRequis: 4
   finText: 'I can''t let my parents hold me back..

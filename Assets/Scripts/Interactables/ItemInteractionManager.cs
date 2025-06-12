@@ -27,6 +27,7 @@ public class ItemInteractionManager : MonoBehaviour
 
     public static ItemInteractionManager Instance;
     private int compteur = 0;
+    private bool waitingForTextToClose = false; // Nouvelle variable pour savoir si on attend
 
 
     void Awake()
@@ -66,6 +67,21 @@ public class ItemInteractionManager : MonoBehaviour
             Debug.Log($"Items requis: {GetItemsSpeciauxRequis()}");
         }
     }
+    void Update()
+    {
+        // Vérifier si on attend que le texte se ferme
+        if (waitingForTextToClose)
+        {
+            // Si ObjectsManager existe et que le texte n'est plus actif
+            if (ObjectsManager.Instance != null && !ObjectsManager.Instance.IsTextActive())
+            {
+                waitingForTextToClose = false;
+                // Maintenant on peut vraiment lancer la séquence de fin
+                StartCoroutine(SequenceFinDeJeu());
+            }
+        }
+    }
+
     public int GetItemsSpeciauxRequis()
     {
         return currentCharacterData != null ? currentCharacterData.itemsSpeciauxRequis : 4;
@@ -79,7 +95,18 @@ public class ItemInteractionManager : MonoBehaviour
 
         if (compteur >= GetItemsSpeciauxRequis())
         {
-            StartCoroutine(SequenceFinDeJeu());
+            // Au lieu de lancer directement la séquence, on attend que le texte se ferme
+            if (ObjectsManager.Instance != null && ObjectsManager.Instance.IsTextActive())
+            {
+                waitingForTextToClose = true;
+                if (debugMode)
+                    Debug.Log("En attente de la fermeture du texte avant la fin de jeu...");
+            }
+            else
+            {
+                // Si aucun texte n'est actif, lancer directement
+                StartCoroutine(SequenceFinDeJeu());
+            }
         }
     }
 
