@@ -15,5 +15,7 @@ MonoBehaviour:
   characterName: Hongjoong
   portrait: {fileID: 5280038247071289603, guid: 5cff616625d92c14b9008a4bbdc18f88, type: 3}
   animatorController: {fileID: 9100000, guid: 0e0b2f26e0fe7824591aa6132ef0060f, type: 2}
-  spawnPosition: {x: -7, y: 2}
+  spawnPosition: {x: -25.7, y: 33}
   description: The Captain of ATEEZ
+  itemsSpeciauxRequis: 0
+  finText: 
