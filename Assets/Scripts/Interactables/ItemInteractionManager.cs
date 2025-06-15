@@ -116,7 +116,6 @@ public class ItemInteractionManager : MonoBehaviour
         yield return StartCoroutine(FadeToBlack());
         yield return StartCoroutine(TextSlow());
         yield return new WaitForSeconds(textDisplayDuration);
-        yield return StartCoroutine(LoadingScreen());
         CharaSelectorScene();
     }
     IEnumerator FadeToBlack()
@@ -152,17 +151,6 @@ public class ItemInteractionManager : MonoBehaviour
         }
     }
 
-    IEnumerator LoadingScreen()
-    {
-        // Vous pouvez ajouter ici une barre de chargement ou des points qui s'ajoutent
-        string baseText = transitionText.text;
-
-        for (int i = 0; i < 3; i++)
-        {
-            transitionText.text = baseText + "\n\nChargement" + new string('.', i + 1);
-            yield return new WaitForSeconds(loadingDuration / 3f);
-        }
-    }
 
     void CharaSelectorScene()
     {
