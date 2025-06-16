@@ -17,5 +17,8 @@ MonoBehaviour:
   animatorController: {fileID: 9100000, guid: 0e0b2f26e0fe7824591aa6132ef0060f, type: 2}
   spawnPosition: {x: -25.7, y: 33}
   description: The Captain of ATEEZ
-  itemsSpeciauxRequis: 0
-  finText: 
+  itemsSpeciauxRequis: 5
+  finText: 'Right, I remember..
+
+    I need to go find my friends to tell them about
+    the Cromer !'

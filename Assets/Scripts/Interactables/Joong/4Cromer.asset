@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03e2109d61e1ca40b54b86bbda1d381, type: 3}
+  m_Name: 4Cromer
+  m_EditorClassIdentifier: 
+  itemName: Hourglass ?
+  itemInfo:
+  - This hourglass is the "Cromer"
+  - He got it from his dreams, somehow
+  - From someone who looked like him, he had a fedora hat and wore all black.
+  - He said the 8 of them had a mission, and needed to use this "Cromer"
+  - What was it, really ?
+  estSpecial: 1

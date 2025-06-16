@@ -19,6 +19,7 @@ public class ItemInteractionManager : MonoBehaviour
     public float fadeDuration = 1f;
     public float textDisplayDuration = 3f;
     public float textSpeed = 0.03f;
+    public float textFadeOutDuration = 1.5f;
     public float loadingDuration = 2f;
     public string characterSelectionSceneName = "CharacterSelection";
 
@@ -28,6 +29,7 @@ public class ItemInteractionManager : MonoBehaviour
     public static ItemInteractionManager Instance;
     private int compteur = 0;
     private bool waitingForTextToClose = false; // Nouvelle variable pour savoir si on attend
+    
 
 
     void Awake()
@@ -116,6 +118,7 @@ public class ItemInteractionManager : MonoBehaviour
         yield return StartCoroutine(FadeToBlack());
         yield return StartCoroutine(TextSlow());
         yield return new WaitForSeconds(textDisplayDuration);
+        yield return StartCoroutine(FadeTextOut());
         CharaSelectorScene();
     }
     IEnumerator FadeToBlack()
@@ -151,6 +154,23 @@ public class ItemInteractionManager : MonoBehaviour
         }
     }
 
+    IEnumerator FadeTextOut()
+    {
+        if (transitionText == null)
+            yield break;
+
+        Color textColor = transitionText.color;
+        float startAlpha = textColor.a;
+
+        float t = 0f;
+        while (t < textFadeOutDuration)
+        {
+            t += Time.deltaTime;
+            textColor.a = Mathf.Lerp(startAlpha, 0f, t / textFadeOutDuration);
+            transitionText.color = textColor;
+            yield return null;
+        }
+    }
 
     void CharaSelectorScene()
     {
@@ -158,6 +178,7 @@ public class ItemInteractionManager : MonoBehaviour
             Debug.Log($"Chargement de la scène: {characterSelectionSceneName}");
 
         SceneManager.LoadScene(characterSelectionSceneName);
+        ResetCompteur();
     }
 
     // Méthodes de debug

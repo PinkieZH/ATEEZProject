@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class PauseGame : MonoBehaviour
 
@@ -11,6 +14,8 @@ public class PauseGame : MonoBehaviour
     private void Awake()
     {
         Resume();
+        menuPause.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     private void Paused()
@@ -18,7 +23,7 @@ public class PauseGame : MonoBehaviour
         menuPause.SetActive(true);
         Time.timeScale = 0f;
         //audioManager.LowPassMusic(true);
-
+        
     }
     private void Resume()
     {
@@ -40,6 +45,11 @@ public class PauseGame : MonoBehaviour
                 Resume();
             }
         }
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
 

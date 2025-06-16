@@ -21,6 +21,9 @@ public class CharacterSelectionManager : MonoBehaviour
     public Button startButton;
     public GameObject infoPanel;
 
+    [Header("Scene Management")]
+    public string[] scenesToHideUI = { "SceneUne", "IntroScene", "SceneDeux", "MainMenu", "CharacterSelection", "CutsceneStart" };
+
     [Header("Debug")]
     public bool debugMode = true;
 
@@ -31,6 +34,7 @@ public class CharacterSelectionManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -38,6 +42,48 @@ public class CharacterSelectionManager : MonoBehaviour
             return;
         }
     }
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        bool shouldHideUI = false;
+
+        foreach (string sceneName in scenesToHideUI)
+        {
+            if (scene.name == sceneName)
+            {
+                shouldHideUI = true;
+                break;
+            }
+        }
+
+        if (shouldHideUI)
+        {
+            HideUI();
+            if (debugMode)
+                Debug.Log($"UI cachée pour la scène: {scene.name}");
+        }
+        else
+        {
+            ShowUI();
+            if (debugMode)
+                Debug.Log($"UI cachée pour la scène: {scene.name}");
+        }
+    }
+
+    private void HideUI()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void ShowUI()
+    {
+        gameObject.SetActive(true);
+    }
+
 
     void Start()
     {
