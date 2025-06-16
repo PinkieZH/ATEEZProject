@@ -41708,6 +41708,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 1942788602327193829, guid: b5eb53b56efda1447b26cb1f5e228081, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942788602327193829, guid: b5eb53b56efda1447b26cb1f5e228081, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1089362598752424768, guid: d372c8decffd8e14e8abba772e315f42, type: 3}
+    - target: {fileID: 4939712621635151714, guid: b5eb53b56efda1447b26cb1f5e228081, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939712621635151714, guid: b5eb53b56efda1447b26cb1f5e228081, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1089362598752424768, guid: d372c8decffd8e14e8abba772e315f42, type: 3}
     - target: {fileID: 9102619237755670214, guid: b5eb53b56efda1447b26cb1f5e228081, type: 3}
       propertyPath: playerInput
       value: 

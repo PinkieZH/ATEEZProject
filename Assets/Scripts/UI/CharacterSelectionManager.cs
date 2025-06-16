@@ -20,9 +20,11 @@ public class CharacterSelectionManager : MonoBehaviour
     public Image portraitImage;
     public Button startButton;
     public GameObject infoPanel;
+    public GameObject namePanel;
+
 
     [Header("Scene Management")]
-    public string[] scenesToHideUI = { "SceneUne", "IntroScene", "SceneDeux", "MainMenu", "CharacterSelection", "CutsceneStart" };
+    public string[] scenesToHideUI = { "SceneUne", "IntroScene", "MainMenu", "CharacterSelection", "CutsceneStart" };
 
     [Header("Debug")]
     public bool debugMode = true;
@@ -94,6 +96,8 @@ public class CharacterSelectionManager : MonoBehaviour
     {
         if (infoPanel != null)
             infoPanel.SetActive(false);
+        if (namePanel != null)
+            namePanel.SetActive(false);
 
         if (startButton != null)
             startButton.interactable = false;
@@ -190,6 +194,8 @@ public class CharacterSelectionManager : MonoBehaviour
         // Activer le panneau d'info
         if (infoPanel != null)
             infoPanel.SetActive(true);
+        if (namePanel != null)
+            namePanel.SetActive(true);
 
         // Mettre à jour les informations
         if (nameText != null)

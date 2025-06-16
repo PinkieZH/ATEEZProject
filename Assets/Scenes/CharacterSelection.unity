@@ -388,6 +388,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1373876260029551320, guid: f22c37d890b4caa4ea55965cafd5c794, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5433749031037471777, guid: f22c37d890b4caa4ea55965cafd5c794, type: 3}
       propertyPath: m_Name
       value: CharaSelectManager
@@ -431,6 +435,18 @@ PrefabInstance:
     - target: {fileID: 7594854164892718830, guid: f22c37d890b4caa4ea55965cafd5c794, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542056240671328270, guid: f22c37d890b4caa4ea55965cafd5c794, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.333454
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542056240671328270, guid: f22c37d890b4caa4ea55965cafd5c794, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.65900004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542056240671328270, guid: f22c37d890b4caa4ea55965cafd5c794, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.64120764
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

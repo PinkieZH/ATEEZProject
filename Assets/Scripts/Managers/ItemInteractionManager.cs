@@ -63,12 +63,56 @@ public class ItemInteractionManager : MonoBehaviour
             Debug.LogError("CharacterData non assigné dans ItemInteractionManager !");
         }
 
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         if (debugMode)
         {
             Debug.Log($"Personnage: {currentCharacterData?.characterName}");
             Debug.Log($"Items requis: {GetItemsSpeciauxRequis()}");
         }
     }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "SceneUne")
+        {
+            ResetFadeCanvas();
+            if (debugMode)
+                Debug.Log($"FadeCanvas réinitialisé pour la scène: {scene.name}");
+        }
+    }
+
+    private void ResetFadeCanvas()
+    {
+        // Désactiver le fadeCanvas
+        if (fadeCanvas != null)
+        {
+            fadeCanvas.SetActive(false);
+        }
+
+        // Remettre l'alpha du fadeImage à 0
+        if (fadeImage != null)
+        {
+            Color c = fadeImage.color;
+            c.a = 0f;
+            fadeImage.color = c;
+        }
+
+        // Vider le texte de transition et remettre son alpha à 1
+        if (transitionText != null)
+        {
+            transitionText.text = "";
+            Color textColor = transitionText.color;
+            textColor.a = 1f;
+            transitionText.color = textColor;
+        }
+    }
+
     void Update()
     {
         // Vérifier si on attend que le texte se ferme
@@ -176,7 +220,7 @@ public class ItemInteractionManager : MonoBehaviour
     {
         if (debugMode)
             Debug.Log($"Chargement de la scène: {characterSelectionSceneName}");
-
+       
         SceneManager.LoadScene(characterSelectionSceneName);
         ResetCompteur();
     }
