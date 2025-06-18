@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastMoveDirection;
 
     private Vector2 moveDirection;
+    private bool canMove = true;
 
 
     private void Awake()
@@ -55,10 +56,38 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         Animate();
+        CheckMovementState();
+    }
+
+    private void CheckMovementState()
+    {
+        if (ObjectsManager.Instance != null)
+        {
+            bool textActive = ObjectsManager.Instance.IsTextActive();
+
+            // Si l'état a changé
+            if (canMove == textActive)
+            {
+                canMove = !textActive;
+
+                // Si on bloque le mouvement, arrêter le joueur
+                if (!canMove)
+                {
+                    moveDirection = Vector2.zero;
+                    rb.linearVelocity = Vector2.zero;
+                }
+            }
+        }
     }
 
     public void SetMoveDirection(Vector2 direction)
     {
+
+        if (!canMove)
+        {
+            moveDirection = Vector2.zero;
+            return;
+        }
         moveDirection = direction;
 
         /*if (direction.x > 0 && isFacingRight)
@@ -92,7 +121,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (rb)
         {
-            rb.linearVelocity = moveDirection * moveSpeed;
+            if (canMove)
+            {
+                rb.linearVelocity = moveDirection * moveSpeed;
+
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
         }
         else
         {
@@ -102,10 +139,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Animate()
     {
-        if (moveDirection.x != 0 || moveDirection.y != 0)
+        if (canMove && (moveDirection.x != 0 || moveDirection.y != 0))
         {
             lastMoveDirection = moveDirection;
         }
+        Vector2 animMoveDirection = canMove ? moveDirection : Vector2.zero;
 
         anim.SetFloat("MoveX", moveDirection.x);
         anim.SetFloat("MoveY", moveDirection.y);

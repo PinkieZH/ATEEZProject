@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - PauseMenuTag
+  - ContinueIndicatorTag
+  - FadeCanvasTag
+  - InfoPanelTag
+  - InfoTextTag
+  - FadeImageTag
+  - ItemNameTag
+  - TransitionTextTag
   layers:
   - Default
   - TransparentFX
@@ -11,9 +19,9 @@ TagManager:
   - 
   - Water
   - UI
+  - Player
   - Interactable
-  - 
-  - 
+  - Ground
   - 
   - 
   - 
